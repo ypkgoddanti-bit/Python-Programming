@@ -1,7 +1,15 @@
-#30.Student Email and Identifier Validation.
-email = input("Enter email: ")
+#35.Text Compression Using Character Runs
+text = input("Enter string: ")
 
-if "@" in email and "." in email:
-    print("Valid Email")
-else:
-    print("Invalid Email")
+result = ""
+count = 1
+
+for i in range(len(text)-1):
+    if text[i] == text[i+1]:
+        count += 1
+    else:
+        result += text[i] + str(count)
+        count = 1
+
+result += text[-1] + str(count)
+print("Compressed:", result)
